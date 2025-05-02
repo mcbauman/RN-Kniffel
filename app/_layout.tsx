@@ -8,7 +8,7 @@
 
 import { View, Text, Button } from "react-native";
 import React, {useState} from 'react';
-
+import OneDice from "@/components/OneDice"
 // import { useColorScheme } from '@/hooks/useColorScheme';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -31,6 +31,9 @@ export default function RootLayout() {
       <Text>KNIFFEL</Text>
         <Text>{dicelocked[0]}</Text>
       <View>
+      {dice.map((oneDice, index)=>(
+        <OneDice dice={dice[index]} dicelocked={dicelocked[index]}/>
+      ))}
         {dice.map((oneDice, index)=>(
           <Button 
             key={index}
