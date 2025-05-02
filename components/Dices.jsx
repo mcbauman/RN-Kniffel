@@ -16,6 +16,7 @@ export default function Dices(props){
           }
         })
         props.setDice(newDice)
+        props.setThrowCount(props.throwCound+1)
       }
     
     return (
@@ -27,10 +28,13 @@ export default function Dices(props){
                 title={oneDice.toString()} 
                 onPress={()=>lockDice(index)}/>
                 ))}
-            <Button 
-                title="rollDice"
-                onPress={()=>rollDices()}
-            />
+            {
+                props.throwCound<3?
+                <Button 
+                    title="rollDice"
+                    onPress={()=>rollDices()}
+                />:null
+        }
         </View>
     )
 }
