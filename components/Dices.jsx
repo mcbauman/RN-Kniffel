@@ -1,0 +1,36 @@
+import { View, Button } from "react-native"
+
+export default function Dices(props){
+    function lockDice(index){
+        let newdiceLocked = [...props.dicelocked]
+        newdiceLocked[index]=!props.dicelocked[index]
+        props.setDiceLocked(newdiceLocked)
+      }
+      function rollDices(){
+        let newDice=props.dice.map((oldDice, index)=>{
+          if(!props.dicelocked[index]){
+            const OneNewdice=Math.ceil(Math.random()*6)
+            return OneNewdice
+          }else{
+            return oldDice
+          }
+        })
+        props.setDice(newDice)
+      }
+    
+    return (
+        <View style={{flex:1, flexDirection:"row"}}>
+            {props.dice.map((oneDice, index)=>(
+                <Button 
+                key={index}
+                color={props.dicelocked[index]?"red":"green"} 
+                title={oneDice.toString()} 
+                onPress={()=>lockDice(index)}/>
+                ))}
+            <Button 
+                title="rollDice"
+                onPress={()=>rollDices()}
+            />
+        </View>
+    )
+}
