@@ -20,8 +20,8 @@ export default function RootLayout() {
   })
 
   return (
-    <View>
-      <Text>KNIFFEL</Text>
+    <View style={{backgroundColor:'grey'}}>
+      <Text style={{width:220, margin:"auto"}}>KNIFFEL</Text>
       <Dices dice={dice} setDice={setDice} dicelocked={dicelocked} 
         setDiceLocked={setDiceLocked} throwCound={throwCound} setThrowCount={setThrowCount} />
       <UpperResult dice={dice} setThrowCount={setThrowCount} 
@@ -30,6 +30,7 @@ export default function RootLayout() {
       <ButtomResult dice={dice} setThrowCount={setThrowCount} 
         bottomResult={bottomResult} setBottomResult={setBottomResult} setDice={setDice}
         setDiceLocked={setDiceLocked} />
+        <View></View>
     </View>
   )
 }

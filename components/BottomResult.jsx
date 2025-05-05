@@ -9,7 +9,7 @@ export default function BottomResult(props) {
         } else if (is >= shall) {
             color = "green"
         } else {
-            color = "red"
+            color = "rgb(168, 32, 32)"
         }
         return color
     }
@@ -131,7 +131,7 @@ export default function BottomResult(props) {
     }
 
     return (
-        <View>
+        <View style={{width:220, margin:"auto"}}>
             <Text>BottomResults</Text>
             <Button key="fullhouse" 
                 title={props.bottomResult.fullhouse.result===null?'set Full House':props.bottomResult.fullhouse.result}

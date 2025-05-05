@@ -20,11 +20,11 @@ export default function Dices(props){
       }
     
     return (
-        <View style={{flex:1, flexDirection:"row"}}>
+        <View style={{flex:1, flexDirection:"row", justifyContent:'space-between', width:220, margin:"auto"}}>
             {props.dice.map((oneDice, index)=>(
                 <Button 
                 key={index}
-                color={props.dicelocked[index]?"red":"green"} 
+                color={props.dicelocked[index]?"blue":"green"} 
                 title={oneDice.toString()} 
                 onPress={()=>lockDice(index)}/>
                 ))}

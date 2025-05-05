@@ -9,7 +9,7 @@ export default function UpperResult(props) {
         } else if (res >= (index + 1) * 3) {
             color = "green"
         } else {
-            color = "red"
+            color = "rgb(168, 32, 32)"
         }
         return color
     }
@@ -35,7 +35,7 @@ export default function UpperResult(props) {
         }
     }
     return (
-        <View>
+        <View style={{width:220, margin:"auto"}}>
             <Text>UPPERRESULT</Text>
             {props.upperResult.map((result, index) => (
                 <Button key={index} title={result===null ? index+1+"-er" : result } 
