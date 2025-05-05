@@ -38,7 +38,7 @@ export default function UpperResult(props) {
         <View>
             <Text>UPPERRESULT</Text>
             {props.upperResult.map((result, index) => (
-                <Button key={index} title={result===null ? index+1+"er" : result } 
+                <Button key={index} title={result===null ? index+1+"-er" : result } 
                     color={colorfunction(result, index)} onPress={()=>setValue(index)}/>
             ))}
         </View>
