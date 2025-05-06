@@ -131,8 +131,7 @@ export default function BottomResult(props) {
     }
 
     return (
-        <View style={{width:220, margin:"auto"}}>
-            <Text>BottomResults</Text>
+        <View style={{width:220, margin:"auto", flex:3}}>
             <Button key="fullhouse" 
                 title={props.bottomResult.fullhouse.result===null?'set Full House':props.bottomResult.fullhouse.result}
                 color={colorfunction(props.bottomResult.fullhouse.result, props.bottomResult.fullhouse.points)} 
